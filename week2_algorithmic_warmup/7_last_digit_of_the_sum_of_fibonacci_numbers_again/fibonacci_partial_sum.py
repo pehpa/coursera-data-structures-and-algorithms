@@ -16,7 +16,7 @@ def fibonacci_partial_sum_naive(from_, to):
 
 def fibonacci_partial_sum_fast(from_, to):
     assert from_ <= to  # from the assumptions in the problem statement
-    
+
     m = from_ % 60  # pisano_length(10) = 60
     n = to % 60  # pisano_length(10) = 60
 
@@ -35,10 +35,6 @@ def fibonacci_partial_sum_fast(from_, to):
 
 
 if __name__ == '__main__':
-    # input = sys.stdin.read();
-    # from_, to = map(int, input.split())
     from_, to = map(int, input().split())
     # print(fibonacci_partial_sum_naive(from_, to))
-    # from_, to = 5618252, 6583591534156
-    # from_, to = 10, 10
     print(fibonacci_partial_sum_fast(from_, to))
