@@ -1,1 +1,3 @@
-# coursera-datastructureandalgorithms
+# Coursera: Data Structures and Algorithms Specialization
+
+tbd
