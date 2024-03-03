@@ -1,6 +1,6 @@
 import sys
 import os
-sys.path.insert(0, os.path.dirname(os.path.realpath(__file__))+"/../..")
+sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)) + "/../..")
 from utils.stress_test import stress_test
 
 DO_STRESS_TEST = False
