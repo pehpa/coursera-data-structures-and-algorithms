@@ -16,7 +16,7 @@ def gcd(a, b):
     return current_gcd
 
 
-def gcd_fast_2(a, b):
+def _gcd_fast(a, b):
     """Recursive implementation of Euclid's algorithm. Assumes a >= 1 and b >= 0 and a >= b.
 
     Args:
@@ -31,16 +31,16 @@ def gcd_fast_2(a, b):
         return a
     else:
         a_dash = a % b
-        return gcd_fast_2(b, a_dash)
+        return _gcd_fast(b, a_dash)
 
 
-def gcd_fast_2_init(a, b):
-    return gcd_fast_2(max(a, b), min(a, b))
+def gcd_fast(a, b):
+    return _gcd_fast(max(a, b), min(a, b))
 
 
 if __name__ == "__main__":
     if DO_STRESS_TEST:
-        stress_test(gcd_fast_2_init, 2, max_n=10000000)
+        stress_test(gcd_fast, 2, max_n=10000000)
     else:
         a, b = map(int, input().split())
-        print(gcd_fast_2_init(a, b))
+        print(gcd_fast(a, b))
