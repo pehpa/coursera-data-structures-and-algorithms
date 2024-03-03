@@ -2,10 +2,6 @@ import time
 import random
 
 
-# def add3(a, b, c):
-#     return a + b + c
-
-
 def stress_test(func, n_param , max_n=1000, n_test=100):
     """_summary_
 
@@ -34,6 +30,3 @@ def stress_test(func, n_param , max_n=1000, n_test=100):
 
     print("average computation time over {} runs is {:.1e} s".format(len(average_times), sum(average_times)/len(average_times)))
     # print(["{:.1e}".format(x) for x in average_times])
-
-
-# stress_test(add3, 3)
