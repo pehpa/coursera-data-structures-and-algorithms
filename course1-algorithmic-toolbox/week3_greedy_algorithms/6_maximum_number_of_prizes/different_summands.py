@@ -1,3 +1,5 @@
+import math
+
 def optimal_summands(n):
     summands = []
 
@@ -14,6 +16,20 @@ def optimal_summands(n):
 
     return summands
 
+def analytic_solution(n):
+    # compute maximum number so that summands = 1 + 2 + 3 + ... + max_n + r
+    # where r = n - sum(1 + 2 + 3 + ... + max_n)
+    max_n = (-3. + math.sqrt(9. + 8. * n)) / 2.
+    if math.floor(max_n) == max_n:
+        max_n = int(max_n) - 1
+    else:
+        max_n = int(max_n)
+
+    summands = list(range(1, max_n + 1))
+    summands.append(n - sum(summands))
+
+    return summands
+
 
 if __name__ == '__main__':
     n = int(input())
@@ -21,9 +37,9 @@ if __name__ == '__main__':
     # n = 6  # result: 3 / 1 2 3
     # n = 8  # result: 3 / 1 2 5
     # n = 2  # result: 1 / 2
-    # n = 454351
 
-    summands = optimal_summands(n)
+    # summands = optimal_summands(n)
+    summands = analytic_solution(n)
 
     print(len(summands))
     print(*summands)
